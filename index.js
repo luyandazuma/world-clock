@@ -1,25 +1,28 @@
 function updateTime() {
   let newYorkElement = document.querySelector("#new-york");
   if (newYorkElement) {
-    let newYorkDateElement = newYorkElement.querySelector(".date");
-    newYorkDateElement.innerHTML = newYorkTime.format("MMMM	D, YYYY");
+    let newYorkDateElement = newYorkElement.querySelector("#date");
+    newYorkDateElement.innerHTML = moment().format("MMMM	D, YYYY");
 
-    let newYorkTimeElement = document.querySelector(".time");
-    newYorkTimeElement.innerHTML = moment().tz("America/New_York");
+    let newYorkTimeElement = document.querySelector("#time");
+    newYorkTimeElement.innerHTML = moment()
+      .tz("America/New_York")
+      .format("hh:mm:ss [<small>]A[</small>]");
+  }
+
+  let parisElement = document.querySelector("#paris");
+  if (parisElement) {
+    let parisDateElement = parisElement.querySelector("#date");
+    parisDateElement.innerHTML = moment().format("MMMM D, YYYY");
+
+    let parisTimeElement = parisElement.querySelector("#time");
+    parisTimeElement.innerHTML = moment()
+      .tz("Europe/Paris")
+      .format("hh:mm:ss [<small>]A[</small>]");
   }
 }
+
 updateTime();
-
-let parisElement = document.querySelector("#paris");
-if (parisElement) {
-  let parisDateElement = parisElement.querySelector(".date");
-  parisDateElement.innerHTML = parisTime.format("MMMM D, YYYY");
-
-  let parisTime = moment().tz("Europe/Paris");
-
-  let parisTimeElement = parisElement.querySelector(".time");
-  parisTimeElement.innerHTML = parisTime.format("hh:mm:ss");
-}
 
 let citiesSelectElement = document.querySelector("#city");
 citiesSelectElement.addEventListener("change", updateCity);
