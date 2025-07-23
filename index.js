@@ -41,7 +41,7 @@ function updateCity(event) {
       <h2>${cityName}</h2>
       <div class="date">${cityTime.format("MMMM	D, YYYY")}</div>
     </div>
-    <div class="time">${cityTime.format("hh:mm:ss")}</div>
+    <div class="time">${cityTime.format("hh:mm:ss [<small>]A[</small>]")}</div>
   `;
 }
 setInterval(updateTime, 1000);
