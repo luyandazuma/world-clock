@@ -60,6 +60,13 @@ select {
   margin: 15px 0 5px;
 }
 
+.time small {
+  font-size: 22px;
+  opacity: 0.5;
+  vertical-align: middle;
+  line-height: 48px;
+}
+
 .date {
   opacity: 0.5;
 }
